@@ -1,0 +1,16 @@
+{
+  "name": "Dev Container Definition",
+  "extensions": [
+    "ms-azuretools.vscode-docker",
+    "ms-python.python"
+  ],
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    "docker-compose.devcontainer.yml"
+  ],
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "settings": {
+    "terminal.integrated.shell.linux": "bash"
+  }
+}

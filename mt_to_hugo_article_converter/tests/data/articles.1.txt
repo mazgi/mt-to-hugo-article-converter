@@ -1,0 +1,62 @@
+AUTHOR: john
+TITLE: an article
+BASENAME: article-1
+STATUS: Publish
+ALLOW COMMENTS: 0
+CONVERT BREAKS: 0
+ALLOW PINGS: 1
+PRIMARY CATEGORY: category-a
+CATEGORY: category-a
+CATEGORY: category-b
+DATE: 02/25/2010 05:00:00 PM
+TAGS: tag1
+-----
+BODY:
+<p>body text</p>
+
+-----
+EXTENDED BODY:
+<p>extended body text</p>
+<img alt="1234.jpg" src="/2010/02/25/4567.jpg" width="250" class="mt-image-right" style="float: right; margin: 0 0 20px 20px;" />
+
+-----
+EXCERPT:
+
+-----
+KEYWORDS:
+keyword-1 keyword-2
+-----
+
+
+--------
+AUTHOR: smith
+TITLE: article　2番目
+BASENAME: 2nd_article
+STATUS: Publish
+ALLOW COMMENTS: 0
+CONVERT BREAKS: 0
+ALLOW PINGS: 1
+PRIMARY CATEGORY: category-b
+CATEGORY: category-b
+CATEGORY: category-c
+DATE: 03/04/2012 01:23:00 AM
+TAGS: "tag2 tag3"
+-----
+BODY:
+<p>body text2️⃣</p>
+
+-----
+EXTENDED BODY:
+<p>extended body text</p>
+<img alt="1234.jpg" src="/2012/03/04/4567.jpg" width="250" class="mt-image-right" style="float: right; margin: 0 0 20px 20px;" />
+
+-----
+EXCERPT:
+
+-----
+KEYWORDS:
+
+-----
+
+
+--------

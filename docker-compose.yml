@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  dev:
+    build:
+      context: Dockerfile.d/dev
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+    environment:
+      - PYTHONPATH=/workspace/mt_to_hugo_article_converter
+    user: "${UID:-0}:${GID:-0}"
+    command:
+      - bash
+      - -c
+      - |
+        python mt_to_hugo_article_converter/converter.py \
+        --input-file=mt_to_hugo_article_converter/tests/data/articles.1.txt \
+        --output-directory=tmp
