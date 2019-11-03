@@ -8,6 +8,6 @@ jobs:
     - uses: actions/checkout@master
     - run: sudo apt-get install --assume-yes --no-install-recommends python3-setuptools
     - run: sudo python3 -m pip install --upgrade pip
-    - run: sudo python3 -m pip install --upgrade --requirement Dockerfile.d/dev/requirements.txt
+    - run: sudo -H python3 -m pip install --upgrade --ignore-installed --requirement Dockerfile.d/dev/requirements.txt
     - run: PYTHONPATH=${PWD}/mt_to_hugo_article_converter python3 -m pytest mt_to_hugo_article_converter/tests/
 
