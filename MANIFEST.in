@@ -1,1 +1,1 @@
-recursive-include mt_to_hugo_article_converter/examples
+recursive-include mt_to_hugo_article_converter/examples *

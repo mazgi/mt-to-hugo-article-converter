@@ -1,7 +1,7 @@
 import sys
 from optparse import OptionParser
-from config import Config
-from converter import Converter
+from .config import Config
+from .converter import Converter
 
 
 def main():
@@ -44,7 +44,3 @@ def main():
 
     converter = Converter()
     converter.convert(config)
-
-
-if __name__ == '__main__':
-    main()

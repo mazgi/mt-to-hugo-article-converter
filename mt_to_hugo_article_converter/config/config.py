@@ -43,6 +43,7 @@ class Config:
         self.download_assets = False
         self.assets_download_base_url = None
         self.assets_download_filter_patterns = []
+        self.attribute_map = {}
 
         self.load_config_file(config_file_path)
         self.apply_config_valus()
@@ -75,6 +76,7 @@ class Config:
             self.data["asset_download"]["base_url"])
         self.set_assets_download_filter_patterns(
             self.data["asset_download"]["filter"])
+        self.set_attribute_map(self.data["attribute_map"])
 
     def get_version(self):
         return self.version
@@ -184,6 +186,13 @@ class Config:
 
     def get_assets_download_filter_patterns(self):
         return self.assets_download_filter_patterns
+
+    def set_attribute_map(self, values):
+        self.attribute_map = values
+        return self
+
+    def get_attribute_map(self):
+        return self.attribute_map
 
     def get_errors(self):
         return self.errors

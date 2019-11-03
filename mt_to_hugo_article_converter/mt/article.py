@@ -1,6 +1,6 @@
 import re
 from functools import reduce
-from config import Config
+from ..config import Config
 from .attribute import Author, Title, Basename, Status, PrimaryCategory, Category, Date, Tags, Body, ExtendedBody, Keywords
 
 

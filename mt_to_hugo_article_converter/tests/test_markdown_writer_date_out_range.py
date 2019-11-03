@@ -1,8 +1,7 @@
 import pytest
-from config import Config
-from markdown import Writer
-
-from mt.attribute import Author, Title, Basename, Status, PrimaryCategory, Category, Date, Tags, Body, ExtendedBody, Keywords
+from ..config import Config
+from ..markdown import Writer
+from ..mt.attribute import Author, Title, Basename, Status, PrimaryCategory, Category, Date, Tags, Body, ExtendedBody, Keywords
 
 
 def test_markdown_writer_date_out_range_1():

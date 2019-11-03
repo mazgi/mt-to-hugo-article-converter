@@ -1,7 +1,7 @@
 import pathlib
 import os
 import urllib.request
-from config import Config
+from ..config import Config
 
 
 class AssetDownloader:
@@ -33,6 +33,7 @@ class AssetDownloader:
             file_name = urllib.parse.unquote(file_name)
             file_path = os.path.join(dir_path, file_name)
             try:
+                print("🌏 downloading the asset: {}".format(url))
                 urllib.request.urlretrieve(url, file_path)
             except Exception as error:
-                print("❗️ cannot download the image: {}\n{}".format(url, error))
+                print("❗️ cannot download the asset: {}\n{}".format(url, error))

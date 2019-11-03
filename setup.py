@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mt-to-hugo-article-converter",
-    version="0.0.3",
+    version="0.0.4",
     author="Hidenori MATSUKI",
     author_email="dev@mazgi.com",
     description="Convert articles from MT to Hugo",

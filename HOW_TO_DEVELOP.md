@@ -25,7 +25,7 @@ Edit the `.envrc` file with `direnv edit .` command.
 ## Run
 
 ```shellsession
-python mt_to_hugo_article_converter/main.py -c mt_to_hugo_article_converter/examples/from_hatenablog/config.yml
+python -m mt_to_hugo_article_converter mt_to_hugo_article_converter -c mt_to_hugo_article_converter/examples/from_hatenablog/config.yml
 ```
 
 ## Test
@@ -39,6 +39,7 @@ python -m pytest mt_to_hugo_article_converter/tests/
 ```shellsession
 pip uninstall --yes mt_to_hugo_article_converter
 pip install --no-cache-dir .
+mt-to-hugo-article-converter -h
 ```
 
 ## Build pip

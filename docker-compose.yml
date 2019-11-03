@@ -6,8 +6,6 @@ services:
     working_dir: /workspace
     volumes:
       - .:/workspace
-    environment:
-      - PYTHONPATH=/workspace/mt_to_hugo_article_converter
     user: "${UID:-0}:${GID:-0}"
     command:
       - bash

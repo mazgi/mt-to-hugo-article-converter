@@ -3,7 +3,8 @@ import os
 import re
 import urllib.request
 from datetime import datetime
-from config import Config
+from ..config import Config
+from .taxonomies_mapper import TaxonomiesMapper
 from .asset_downloader import AssetDownloader
 
 
@@ -11,6 +12,7 @@ class Writer:
     def __init__(self, config, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.config = config
+        self.taxonomies_mapper = TaxonomiesMapper()
         self.asset_downloader = AssetDownloader()
 
     def merge_body(self, md):
@@ -101,36 +103,32 @@ class Writer:
         basename = None
 
         for attr in article.attributes:
-            if attr.name() == "Basename":
-                basename = attr.value()
-            if attr.name() == "Title":
-                md["title"] = attr.value()
-            if attr.name() == "Date":
-                md["date"] = attr.value()
-                date = attr.value()
+            name = attr.name()
+            value = attr.value()
+            if name == "Basename":
+                basename = value
+            if name == "Title":
+                md["title"] = value
+            if name == "Date":
+                md["date"] = value
+                date = value
                 if self.is_not_target(date):
                     print("skipped: {}, {}".format(basename, date))
                     return
-            if attr.name() == "Author":
-                md["author"] = attr.value()
-            # if attr.name() == "PrimaryCategory" or attr.name() == "Category":
-            #     v = attr.value()
-            #     if isinstance(v, str):
-            #         md["categories"].append(v)
-            #     elif isinstance(v, list):
-            #         md["categories"] = md["categories"] + v
-            # if attr.name() == "Tags" or attr.name() == "Keywords":
-            #     v = attr.value()
-            #     if isinstance(v, list):
-            #         md["tags"] = md["tags"] + v
-            if attr.name() == "Body":
-                v = attr.value()
-                v = self.replace_asset_urls(v, article.get_assets_info())
-                md["body"] = (v, md["body"][1])
+            if name == "Author":
+                md["author"] = value
+            if name in ["PrimaryCategory", "Category", "Tags", "Keywords"]:
+                mapped = self.taxonomies_mapper.map(self.config, name, value)
+                for key in mapped:
+                    md[key] += mapped[key]
+            if name == "Body":
+                value = self.replace_asset_urls(
+                    value, article.get_assets_info())
+                md["body"] = (value, md["body"][1])
             if attr.name() == "ExtendedBody":
-                v = attr.value()
-                v = self.replace_asset_urls(v, article.get_assets_info())
-                md["body"] = (md["body"][0], v)
+                value = self.replace_asset_urls(
+                    value, article.get_assets_info())
+                md["body"] = (md["body"][0], value)
 
         md["categories"] = sorted(list(set(md["categories"])))
         md["tags"] = sorted(list(set(md["tags"])))
