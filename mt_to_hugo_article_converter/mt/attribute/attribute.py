@@ -4,10 +4,11 @@ import re
 class Attribute:
     regex = re.compile(r'^$')
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, filter_func=lambda line: line, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.open = True
         self.value_ = None
+        self.filter = filter_func
 
     def name(self):
         '''
@@ -44,6 +45,10 @@ class Attribute:
         True
         '''
         return self.value_ == None
+
+    def test(self, line):
+        match = self.regex.search(line)
+        return match != None
 
     def set(self, line):
         return self

@@ -1,5 +1,6 @@
 import re
 from dateutil.parser import parse
+from dateutil.tz import gettz
 from .single_line_attribute import SingleLineAttribute
 
 
@@ -9,7 +10,9 @@ class Date(SingleLineAttribute):
     def value(self):
         v = super(Date, self).value()
         if v:
-            return parse(v)
+            # TODO: TZ
+            tzinfos = {"JST": gettz('Asia/Tokyo')}
+            return parse(v, tzinfos=tzinfos)
         return None
 
 

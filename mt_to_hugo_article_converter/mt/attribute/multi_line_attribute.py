@@ -44,6 +44,7 @@ class MultiLineAttribute(Attribute):
         self.probe_delimiter(line)
         self.snag_off(line)
         if self.open:
+            line = self.filter(line)
             self.lines.append(line)
             # print("snagging: {}".format(line))
         self.snag_on(line)

@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mt-to-hugo-article-converter",
-    version="0.0.2",
+    version="0.0.3",
     author="Hidenori MATSUKI",
     author_email="dev@mazgi.com",
     description="Convert articles from MT to Hugo",
     entry_points={
         "console_scripts": [
-            "mt-to-hugo-article-converter=mt_to_hugo_article_converter.converter:main"
+            "mt-to-hugo-article-converter=mt_to_hugo_article_converter.main:main"
         ]
     },
     long_description=long_description,
@@ -21,7 +21,8 @@ setuptools.setup(
         exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
     install_requires=[
         "python-dateutil",
-        "pytz"
+        "pytz",
+        "pyyaml"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",

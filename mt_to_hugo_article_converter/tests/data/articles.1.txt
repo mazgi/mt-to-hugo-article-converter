@@ -8,7 +8,7 @@ ALLOW PINGS: 1
 PRIMARY CATEGORY: category-a
 CATEGORY: category-a
 CATEGORY: category-b
-DATE: 02/25/2010 05:00:00 PM
+DATE: 11/22/2010 05:00:00 AM
 TAGS: tag1
 -----
 BODY:
@@ -17,7 +17,7 @@ BODY:
 -----
 EXTENDED BODY:
 <p>extended body text</p>
-<img alt="1234.jpg" src="/2010/02/25/4567.jpg" width="250" class="mt-image-right" style="float: right; margin: 0 0 20px 20px;" />
+<img alt="1234.jpg" src="/2010/11/22/4567.jpg" width="250" class="mt-image-right" style="float: right; margin: 0 0 20px 20px;" />
 
 -----
 EXCERPT:
@@ -39,7 +39,7 @@ ALLOW PINGS: 1
 PRIMARY CATEGORY: category-b
 CATEGORY: category-b
 CATEGORY: category-c
-DATE: 03/04/2012 01:23:00 AM
+DATE: 11/22/2010 05:00:01 AM
 TAGS: "tag2 tag3"
 -----
 BODY:
@@ -57,6 +57,32 @@ EXCERPT:
 KEYWORDS:
 
 -----
+AUTHOR: john
+TITLE: 3rd article
+BASENAME: article-3
+STATUS: Publish
+ALLOW COMMENTS: 0
+CONVERT BREAKS: 0
+ALLOW PINGS: 1
+PRIMARY CATEGORY: category-a
+CATEGORY: category-a
+CATEGORY: category-b
+DATE: 11/22/2010 05:00:02 AM
+TAGS: tag1
+-----
+BODY:
+<p>body text</p>
 
+-----
+EXTENDED BODY:
+<p>extended body text</p>
+
+-----
+EXCERPT:
+
+-----
+KEYWORDS:
+keyword-1 keyword-2
+-----
 
 --------
