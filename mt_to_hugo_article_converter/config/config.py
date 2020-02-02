@@ -55,7 +55,7 @@ class Config:
             an_abs_path = os.path.abspath(a_path)
             loaded_data = {}
             with open(an_abs_path, "r") as fp:
-                loaded_data = yaml.load(fp, Loader=yaml.BaseLoader)
+                loaded_data = yaml.load(fp, Loader=yaml.FullLoader)
             self.data.update(loaded_data)
 
     def apply_config_valus(self):
@@ -164,8 +164,8 @@ class Config:
             self.stop_at = d
         return self
 
-    def set_download_assets(self, yes):
-        self.download_assets = bool(yes)
+    def set_download_assets(self, yes: bool) -> object:
+        self.download_assets = yes
         return self
 
     def is_download_assets(self):
