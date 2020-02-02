@@ -1,5 +1,15 @@
 # MT to Hugo Article Converter
 
+## How to try
+
+```shellsession
+docker-compose up
+```
+
+And see `tmp/output/*`
+
+---
+
 ## Requirements
 
 - Python3
