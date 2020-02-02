@@ -11,6 +11,6 @@ services:
       - bash
       - -c
       - |
-        python mt_to_hugo_article_converter/converter.py \
-        --input-file=mt_to_hugo_article_converter/tests/data/articles.1.txt \
-        --output-directory=tmp
+        python -m mt_to_hugo_article_converter \
+        mt_to_hugo_article_converter \
+        --config-file=mt_to_hugo_article_converter/examples/from_hatenablog/config.yml
