@@ -29,7 +29,7 @@ class Config:
         }
     }
 
-    def __init__(self, config_file_path=None, *args, **kwargs):
+    def __init__(self, config_file_path: str = None, *args, **kwargs) -> object:
         super().__init__(*args, **kwargs)
         self.validator = Validator()
         self.errors = []
@@ -48,7 +48,7 @@ class Config:
         self.load_config_file(config_file_path)
         self.apply_config_valus()
 
-    def load_config_file(self, a_path=None):
+    def load_config_file(self, a_path: str = None) -> None:
         if a_path:
             errs = self.validator.validate_config_file_path(a_path)
             self.errors += errs
@@ -58,7 +58,7 @@ class Config:
                 loaded_data = yaml.load(fp, Loader=yaml.FullLoader)
             self.data.update(loaded_data)
 
-    def apply_config_valus(self):
+    def apply_config_valus(self) -> None:
         self.set_version(self.data["version"])
         self.set_output_directory_path(self.data["output"]["base_path"])
         self.set_output_content_path_fmt(
@@ -78,20 +78,20 @@ class Config:
             self.data["asset_download"]["filter"])
         self.set_attribute_map(self.data["attribute_map"])
 
-    def get_version(self):
+    def get_version(self) -> str:
         return self.version
 
-    def set_version(self, str):
+    def set_version(self, str: str) -> object:
         errs = self.validator.validate_version(str)
         self.errors += errs
         if len(errs) == 0:
             self.version = str
         return self
 
-    def get_output_directory_path(self):
+    def get_output_directory_path(self) -> str:
         return self.output_directory_path
 
-    def set_output_directory_path(self, a_path):
+    def set_output_directory_path(self, a_path: str) -> object:
         if a_path == None:
             return self
 
@@ -102,30 +102,30 @@ class Config:
             self.output_directory_path = an_abs_path
         return self
 
-    def get_output_content_path_fmt(self):
+    def get_output_content_path_fmt(self) -> str:
         return self.output_content_path_fmt
 
-    def set_output_content_path_fmt(self, a_path):
+    def set_output_content_path_fmt(self, a_path: str) -> object:
         if a_path == None:
             return self
 
         self.output_content_path_fmt = a_path
         return self
 
-    def get_output_static_path_fmt(self):
+    def get_output_static_path_fmt(self) -> str:
         return self.output_static_path_fmt
 
-    def set_output_static_path_fmt(self, a_path):
+    def set_output_static_path_fmt(self, a_path: str) -> object:
         if a_path == None:
             return self
 
         self.output_static_path_fmt = a_path
         return self
 
-    def get_input_file_path(self):
+    def get_input_file_path(self) -> str:
         return self.input_file_path
 
-    def set_input_file_path(self, a_path):
+    def set_input_file_path(self, a_path: str) -> object:
         if a_path == None:
             return self
 
