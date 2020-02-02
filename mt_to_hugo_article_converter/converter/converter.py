@@ -11,7 +11,7 @@ class Converter:
             article = Article(config)
             for line in fp:
                 if article.will_end(line):
-                    if article.fullfilled():
+                    if not article.fullfilled():
                         print("WARN: the article has not enough attributes.")
                     writer.write(article)
                 article = article.append_line(line)
