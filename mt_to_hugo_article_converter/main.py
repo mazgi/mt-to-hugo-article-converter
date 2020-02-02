@@ -17,9 +17,9 @@ def main():
     option_parser.add_option("-e", "--stop-at", dest="stop_at",
                              help="stop date", metavar="DATE")
     option_parser.add_option("-d", "--asset-download-enabled", action="store_true",
-                             dest="asset_download_enabled", default=True, help="download assets")
+                             dest="asset_download_enabled", default=None, help="download assets")
     option_parser.add_option("-D", "--asset-download-disabled", action="store_false",
-                             dest="asset_download_enabled", default=True, help="download assets")
+                             dest="asset_download_enabled", default=None, help="download assets")
     (options, args) = option_parser.parse_args()
 
     config = Config(
@@ -32,9 +32,10 @@ def main():
         options.start_at
     ).set_stop_at(
         options.stop_at
-    ).set_download_assets(
-        options.asset_download_enabled
     )
+
+    if options.asset_download_enabled != None:
+        config.set_download_assets(options.asset_download_enabled)
 
     errs = config.get_errors()
     if len(errs) > 0:
