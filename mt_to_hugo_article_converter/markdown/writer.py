@@ -91,7 +91,7 @@ class Writer:
                 return False
         return True
 
-    def write(self,  article):
+    def write(self, article):
         md = {
             "title": None,
             "date": None,
