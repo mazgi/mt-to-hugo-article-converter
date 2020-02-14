@@ -1,5 +1,7 @@
 # MT to Hugo Article Converter
 
+![GitHub Actions status for "default"](https://github.com/mazgi/mt-to-hugo-article-converter/workflows/default/badge.svg)
+
 ## How to try
 
 ```shellsession
