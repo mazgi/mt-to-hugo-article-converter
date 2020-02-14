@@ -8,12 +8,14 @@ extras_require = {
         "autopep8",
         "pylint",
         "rope",
-        "twine"
+        "twine",
+        "PyYAML"
     ],
     "_test_pkgs": [
         "pytest",
         "pytest-cov",
-        "pytest-pycodestyle"
+        "pytest-pycodestyle",
+        "PyYAML"
     ]
 }
 extras_require["dev"] = sorted(
