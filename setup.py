@@ -3,6 +3,34 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+extras_require={
+    "_dev_pkgs": [
+        "autopep8",
+        "pylint",
+        "pytest",
+        "pytest-cov",
+        "pytest-pep8",
+        "rope",
+        "twine"
+    ],
+    "_test_pkgs": [
+        "pytest",
+        "pytest-cov",
+        "pytest-pep8"
+    ]
+}
+extras_require["dev"]=sorted(
+    set(
+        extras_require["_dev_pkgs"]
+        + extras_require["_test_pkgs"]
+    )
+)
+extras_require["test"]=sorted(
+    set(
+        extras_require["_test_pkgs"]
+    )
+)
+
 setuptools.setup(
     name="mt-to-hugo-article-converter",
     version="0.0.5",
@@ -24,6 +52,7 @@ setuptools.setup(
         "pytz",
         "pyyaml"
     ],
+    extras_require=extras_require,
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

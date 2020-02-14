@@ -19,8 +19,7 @@ RUN apt-get update \
   && echo 'direnv allow' >> /etc/profile.d/direnv.sh \
   && mkdir -p /.config /.docker \
   && chmod a+rwx /.config /.docker \
-  && python3 -m pip install --upgrade pip \
-  && python3 -m pip install --upgrade --requirement /tmp/requirements.txt
+  && python3 -m pip install --upgrade pip
 
 # Reset DEBIAN_FRONTEND to default(`dialog`).
 # If you no need `dialog`, you can set `DEBIAN_FRONTEND=readline`.
