@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-extras_require={
+extras_require = {
     "_dev_pkgs": [
         "autopep8",
         "pylint",
@@ -19,13 +19,13 @@ extras_require={
         "pytest-pep8"
     ]
 }
-extras_require["dev"]=sorted(
+extras_require["dev"] = sorted(
     set(
         extras_require["_dev_pkgs"]
         + extras_require["_test_pkgs"]
     )
 )
-extras_require["test"]=sorted(
+extras_require["test"] = sorted(
     set(
         extras_require["_test_pkgs"]
     )

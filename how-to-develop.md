@@ -39,6 +39,10 @@ pip install -e .[dev]
 python -m mt_to_hugo_article_converter mt_to_hugo_article_converter -c mt_to_hugo_article_converter/examples/from_hatenablog/config.yml
 ```
 
+```shellsession
+autopep8 --in-place --recursive .
+```
+
 ### Test
 
 ```shellsession
