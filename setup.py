@@ -7,16 +7,13 @@ extras_require = {
     "_dev_pkgs": [
         "autopep8",
         "pylint",
-        "pytest",
-        "pytest-cov",
-        "pytest-pep8",
         "rope",
         "twine"
     ],
     "_test_pkgs": [
         "pytest",
         "pytest-cov",
-        "pytest-pep8"
+        "pytest-pycodestyle"
     ]
 }
 extras_require["dev"] = sorted(

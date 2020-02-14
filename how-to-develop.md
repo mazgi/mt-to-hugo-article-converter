@@ -50,7 +50,7 @@ pip install -e .[test]
 ```
 
 ```shellsession
-python -m pytest --cov mt_to_hugo_article_converter
+python -m pytest --cov --pycodestyle mt_to_hugo_article_converter
 ```
 
 ### Install / uninstall

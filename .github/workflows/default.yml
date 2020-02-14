@@ -9,7 +9,7 @@ jobs:
       - run: sudo apt-get install --assume-yes --no-install-recommends python3-setuptools
       - run: sudo python3 -m pip install --upgrade pip
       - run: sudo -H python3 -m pip install -e .[test]
-      - run: python3 -m pytest --cov mt_to_hugo_article_converter
+      - run: python3 -m pytest mt_to_hugo_article_converter
   install_test:
     name: install the package
     runs-on: ubuntu-latest
