@@ -57,3 +57,7 @@ attribute_map:
         - info
         - お知らせ
 ```
+
+## How to develop
+
+Please see [how-to-develop](how-to-develop.md)
