@@ -1,4 +1,4 @@
-FROM python:3.6-buster
+FROM python:3.6.9-buster
 
 # Set in non-interactive mode.
 ENV DEBIAN_FRONTEND=noninteractive

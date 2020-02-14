@@ -4,29 +4,27 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 extras_require = {
-    "_dev_pkgs": [
+    "dev_pkgs": [
         "autopep8",
         "pylint",
         "rope",
-        "twine",
-        "PyYAML"
+        "twine"
     ],
-    "_test_pkgs": [
+    "test_pkgs": [
         "pytest",
         "pytest-cov",
-        "pytest-pycodestyle",
-        "PyYAML"
+        "pytest-pycodestyle"
     ]
 }
 extras_require["dev"] = sorted(
     set(
-        extras_require["_dev_pkgs"]
-        + extras_require["_test_pkgs"]
+        extras_require["dev_pkgs"]
+        + extras_require["test_pkgs"]
     )
 )
 extras_require["test"] = sorted(
     set(
-        extras_require["_test_pkgs"]
+        extras_require["test_pkgs"]
     )
 )
 
@@ -49,7 +47,7 @@ setuptools.setup(
     install_requires=[
         "python-dateutil",
         "pytz",
-        "pyyaml"
+        "pyyaml>=5.1"
     ],
     extras_require=extras_require,
     classifiers=[
