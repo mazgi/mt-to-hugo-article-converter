@@ -2,15 +2,21 @@ version: "3.7"
 services:
   dev:
     build:
+      args:
+        UID: ${UID:-0}
+        GID: ${GID:-0}
       context: Dockerfile.d/dev
-    working_dir: /workspace
-    volumes:
-      - .:/workspace
-    user: "${UID:-0}:${GID:-0}"
     command:
       - bash
       - -c
       - |
-        python -m mt_to_hugo_article_converter \
-        mt_to_hugo_article_converter \
-        --config-file=mt_to_hugo_article_converter/examples/from_hatenablog/config.yml
+        pip install -e .[dev]
+    user: "${UID:-0}:${GID:-0}"
+    volumes:
+      - .:/workspace
+      - dev-home:/root # for macOS
+      - dev-home:/developer
+    working_dir: /workspace
+volumes:
+  dev-home:
+    driver: local
